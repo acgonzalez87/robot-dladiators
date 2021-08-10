@@ -99,7 +99,7 @@ var fight = function (enemyName) {
       }
 
       // if no (false), ask question again by running fight() again
-      fight();
+      fight(enemyName);
     }
   }
 };
