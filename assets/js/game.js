@@ -95,7 +95,9 @@ var fight = function (enemy) {
 
       // check enemy's health
       if (enemy.health <= 0) {
-        window.alert(enemy.name + " has died!");
+        window.alert(
+          enemy.name + " has died! You have been awarded 20 points!"
+        );
 
         // award player money for winning
         playerInfo.money = playerInfo.money + 20;
@@ -147,7 +149,7 @@ var startGame = function () {
   for (var i = 0; i < enemyInfo.length; i++) {
     // call fight function with enemy-robot
     if (playerInfo.health > 0) {
-      window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+      window.alert("Let's get ready to rumble! Round " + (i + 1));
 
       var pickedEnemyObj = enemyInfo[i];
       pickedEnemyObj.health = randomNumber(40, 60);
@@ -266,7 +268,9 @@ var getPlayerName = function () {
   var name = "";
 
   while (name === "" || name === null) {
-    name = prompt("What is your robot's name?");
+    name = prompt(
+      "Welcome to Robot Gladiators! To win your robot must defeat the fearsome three, you have 10 points to spend at the store if you choose or you can skip a fight at the cost of 10 points! Now, what is your robot's name?"
+    );
   }
 
   console.log("Your robot's name is " + name);
@@ -285,7 +289,7 @@ var playerInfo = {
   },
   refillHealth: function () {
     if (this.money >= 7) {
-      window.alert("Refilling player's health by 20 for 7 dollars.");
+      window.alert("Refilling player's health by 20 for 7 points.");
       this.health += 20;
       this.money -= 7;
     } else {
@@ -294,7 +298,7 @@ var playerInfo = {
   },
   upgradeAttack: function () {
     if (this.money >= 7) {
-      window.alert("Upgrading player's attack by 6 for 7 dollars.");
+      window.alert("Upgrading player's attack by 6 for 7 points.");
       this.attack += 6;
       this.money -= 7;
     } else {
